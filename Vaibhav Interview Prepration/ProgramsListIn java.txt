@@ -1,0 +1,19 @@
+Prime Number
+Fibonacci Series
+Armstrong
+Strong
+Palindrome Number
+Palindrome String
+Find Duplicate
+Remove Duplicate
+Reverse String
+Reverse words of the sentence
+Reverse character in words
+Reverse words as well as charaters
+Find Frequecy of character in string
+Find Frequency of number in a Array
+Factorial
+Get the first digit of number, or first 2 digit
+Sort Array- Stream, Collections, normal logic
+Min, Max- Stream, Collections, normal logic
+Search

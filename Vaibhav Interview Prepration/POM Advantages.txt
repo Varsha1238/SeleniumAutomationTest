@@ -1,0 +1,3 @@
+1- Searching and updating object locators like xpath etc is easy and inserting line of code is easy
+2- StaleElement Exception is internally handeled
+3- Chances of getting memory leaks are very less as per traditional approach

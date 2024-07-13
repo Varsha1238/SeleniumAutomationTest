@@ -1,0 +1,82 @@
+API means Application Programming Interface which is basically used to communicate 2 applications where applications may differ their platforms or in terms of technology.API represents the middle layer which contains business logic.So API is responsible to take data from front end of the application and insert into backend.Also this is resonsible to fetch data from backend and display on the frontend.So it will take the request from application and send response to the application.this is the intermediate between presentation layer that is frontend and database layer that is backend.
+
+
+Why API testing is required
+1.Early detection of defects minimizes the cost of the project
+2.Executionof API testcases takes less time compare to GUI testcases
+3.Without API testing GUI testing gives more issues -more issues ,more time to resolve issues-->increase cost of project
+
+
+There are 2 types of Webservices
+1.SOAP webservices (Simple object Access Protocol)-  old 
+2.REST ful Webservices(Represtational State Transfer) -- > Currently widely used REST APIs
+
+
+API Testing Tools 
+-------------------------------
+1.Postman -Just to check functionality of APIs -REST ful APIs -- > mostly used for manual testing to check response
+2.REST Assured -Library (Functionality and Behaviour) --> For automation of API testing
+3.SOAP UI -SOAP services and REST services
+4.Jmeter-Load Testing -if 10 persons are sending same request then check response
+
+What is API authentication?
+API authentication is the process of verifying the identity of a user who is making an API request, and it is a crucial pillar of API security. There are many types of API authentication, such as HTTP basic authentication, API key authentication, JWT, and OAuth, and each one has its own benefits, trade-offs, and ideal use cases. Nevertheless, all API authentication mechanisms share the goal of protecting sensitive data and ensuring the API is not misused.
+
+What is API authorization?
+API authentication is often used alongside API authorization, but they are not the same thing. While API authentication involves verifying a user's identity, API authorization is the process of checking whether a user has the correct permissions to perform a specific task. It is often based on a user's role within an organization, which may have a predefined access level. For instance, junior-level developers may only be able to read data from certain endpoints, while engineering managers might have read and write access to every API endpoint within their team's scope.
+
+
+What are all HTTP requests?
+REST APIs Requests /Https services
+-------------------------------
+1.GET - Retrive information from the server(R)
+2.POST - Create a REST API Resource(booking ticket,adding some info to DB)(C)
+3.PUT - Update a REST API resource (U)
+4.DELETE - Delete REST API resource(D)
+
+What is difference between put and patch ? 
+PUT — A complete update method that replaces an existing record with a new one. 
+PATCH — A partial update method that changes the values of one or more fields on a record.
+
+
+What are important status codes in API testing ?
+200 --> OK -->	Indicates that the request has succeeded.
+
+201 --> Created -->Indicates that the request has succeeded and a new resource has been created as a result.
+
+300 --> Multiple Choices --> The request has more than one possible response. The user-agent or user should choose one of them.
+
+400 --> Bad Request -->	The request could not be understood by the server due to incorrect syntax. The client SHOULD NOT repeat the request without modifications.
+
+401 --> Unauthorized-->	Indicates that the request requires user authentication information. The client MAY repeat the request with a suitable Authorization header field
+
+403 --> Forbidden --> Unauthorized request. The client does not have access rights to the content. Unlike 401, the client’s identity is known to the server.
+
+404 --> Not Found --> The server can not find the requested resource.
+
+500 --> Internal Server Error --> The server encountered an unexpected condition that prevented it from fulfilling the request.
+
+
+What is API contract document ?
+
+API contract document is basically used to understand the APIs structure ,request,response ,HTTP methods supported 
+etc which contains below details - 
+
+1. API contract document
+
+a. EndPoint /URI
+URI -Uniform Resource Identifier
+URL - Uniform Resource Locator
+1.Base uri- https://www.makemytrip.com
+2.Resources -/hotels/hotel-listing/
+3.Parameters
+         a.Path parameter 
+         b.query parameter -Always start with ?
+
+Base uri -->https://www.makemytrip.com
+Resources --> /hotels/hotel-listing/
+query parameter --->?checkin=05172023&city=CTGOI&checkout=05182023&roomStayQualifier=2e0e&locusId=CTGOI&country=IN&locusType=city&searchText=Goa&regionNearByExp=3
+
+2.API request -->GET,PUT,POST,DELETE
+
+3.Content Type-->json/xml

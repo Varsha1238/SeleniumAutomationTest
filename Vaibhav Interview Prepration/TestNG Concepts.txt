@@ -1,0 +1,76 @@
+https://www.youtube.com/watch?v=LQ72KZAg0QE&list=PLacgMXFs7kl97cZzKPIc4VqLtcqVSs07j
+
+- TestNG is a testing framework that is inspired by JUnit and NUnit and used with Java programming Language.
+- Created By credic Beust
+There are many advantages using TestNG.
+Annotations
+Parameters
+parallel Testing
+Data Providers
+Grouping
+
+
+--> Hard Assertion --> Hard Assertion is an assertion which throws exception immediately upon failure of assertion.Code written after the assertions will be executed.
+--> Soft Assertion --> In the soft assert ,exception is not thrown immediatly if the assertion is failed and all the exceptions are recorded .the statements written after the assertions will be executed.Control is in our hand.
+
+If we have multiple assertions then we can use Soft Assert.
+assertAll(); mandatory to use
+
+Assert -- > hard assertion
+SoftAssert - soft Assert
+
+Que.Parameters -- > using @Parameters({"user","Pass"})
+Use this in TestNg.xml -- > at Suite level or Test Level
+<Parameters name="user" value="Admin123"/>
+<Parameters name="Pass" value="pass1234"/>
+
+Que.Parameters with @Optional-- > using @Parameters({"user","Pass"})
+public void app_launch(@Optional("chrome") String browsername)
+
+Que .How to ignore test --> 
+@Ignore and enabled = false -  - >@Ignore have more precednce /priority
+Use @Ignore annotation before @Test method
+Use @Ignore at class level to ignore all test mothods in a class
+Use @Ignore at package level to ignore all test mothods in a package
+--> for that create package-info.java file and put package name and use @Ignore tag before package name
+
+Que. Grouping
+@Test(groups= {"smoke","Sanity"}) --> Can be at @Test or at Class
+Use this in TestNg.xml -- > at Suite level or Test Level
+<groups>
+  <run>
+<include name="smoke"/>
+</run >
+</groups>
+
+
+Que . Test dependencies -->dependsOnMethods and dependsOnGroups
+@Test(dependsOnMethods = {"login","sendFriendRequest"} ,ignoreMissingDependencies = true,alwaysRun = true)
+public void acceptFriendRequest()
+	{
+		System.out.println("Accepting Friend Request");
+	}
+
+Que.DataProvider return datatypes --> Object[][] ,Object[],Iterator<Object>,Iterator<Object[]>
+
+@Test(dataprovider="getData")
+public void login(String username,String password)
+{
+}
+@DataProvider(indices={0,2})  -- >indices will be used to run partial dataprovider
+public Object[][] getData()
+{
+Object[][] data =new Object [2][2];
+Object [0][0] ="Admin"
+Object [0][1] ="admin123"
+Object [1][0] ="HR"
+Object [1][1] ="hr123"
+return data
+}
+
+Que.Parallel execution with DataProvider
+@DataProvider(parallel=true) and at suite Level add <suite name="Suite" data-provider-thread-count="2">  2 sets of testdata will be provided parallel
+
+
+
+IRetryAnalyzer in TestNG is used to retry failed test cases. To use a retry analyzer in TestNG, you must implement the IRetryAnalyzer interface in your test class and override the retry method. The retry method should return true if the test is rerun and false if the test is not.

@@ -1,0 +1,254 @@
+public class Practice{
+
+	public static void main(String[] args)
+	{
+		WebDriver driver;
+		driver=new ChromeDriver();
+		driver.get("https://www.google.com");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlywait(Duration.ofSeconds(10));
+		
+		//Actions
+
+		Actions action=new Actions(driver);
+		action.keydown(Keys.CTRL).keydown("a").build().perform();
+		action.dragAndDrop(driver.findElement(By.xpath("src")), driver.findElement(By.xpath("dest")));
+		action.clickAndHold(driver.findElement(By.xpath("src"))).moveToElement(driver.FindElement(By.xpath("dest"))).release().build.perform();
+		action.click();//left click
+		action.click(element); left click on element
+		action.contextClick();//right click
+		action.moveToElement(element); mouse hover
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+
+		//Alert
+		Alert alt=diver.switchTo().alert();
+		String alertText=alt.getText();
+		alt.accept(); //click on ok
+		alt.dismiss(); // click on no
+		
+		//ExplicitlyWait
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.until(ExpectedCondititions.visibilityOf(element));
+		
+		Wait<WebDriver> wait=new FluentWait<WebDriver>(driver)	
+					.withTimeout(Duration.ofSeconds(10))
+					.pollingEvery(Duration.ofSeconds(2));
+
+		wait.until(ExpectedConditions.visibilityOf(element));
+
+		
+		//JavascriptExecutor-- sometimes elements are not cliked using normal click method, that may be due to new chnages in the coding 				technology like shadow elements etc.. to handle that we can use JavaScript Executor
+
+		JavascriptExecutor js= (JavascriptExecutor)driver;
+		js.executeScript(Document.querySelector("css path"));
+		js.executeScript(Document.getElementById("ID"));
+
+		//Frame
+		driver.switchTo().frame(index);	
+		driver.switchTo().frame(id);
+		driver.switchTo().frame(element--xpath);
+		driver.switchTo().defaultContent();-- This will switch to out of frame
+
+		//Navigate Back/Forward/refresh
+		driver.navigate().to(url);
+		driver.navigate().back();
+		driver.navigate().forward();
+		driver.navigate().refresh();
+		driver.get(driver.getCurrentURL());--- this will refresh the page
+		
+		
+		//Select DropDown
+		selElement=driver.findElement(By.xpath(//select[...]));
+		Select select=new Select(selElement);
+		select.slectByIndex();
+		select.selectByVisibleText();
+		select.selectByValue();
+
+
+		//TakesScreenshot
+		1-
+		TakesScreenShot ts=(TakesScreenShot)driver;
+		File f=ts.getScreenshotAs(OutputType.File);
+		FileHandler.copyFile(f, new File("path"));
+
+		2-
+		//Shutterbug- plugin/api/jar
+		Shutterbug.shootPage(driver).withName("test.png").save();
+		Shutterbug.shootPage(driver, Capture.full).withName("testFull.png").save();
+		Shutterbug.shootElement(driver,driver.findElement(By.id(''))).withName("element.png").save();
+
+		//UploadFileUsingSikuli
+		Screen s=new Screen();
+		s.type("fullImagePath","TextToType");
+		s.paste("fullImagePath","TextToPaste");
+		s.click("fullImagePath");
+
+		//WebTableDemo
+		List li=driver.findElements(By.xpath("//tr[]/td/a"));
+		foreach(WebElement e:li)
+		{
+			System.out.println(e.getText());
+		}
+		
+		
+		//WorkWithTabs
+		String w1=driver.getWindowHandle();
+		driver.switchTo.window(w1);
+		Set s=driver.getWindowHandles();
+		Iterator it=s.iterator();
+		While(it.hasNext())
+		{
+		String id=it.Next();
+		String title=driver.switchTo.window(id).getTitle();
+		System.out.println(title);
+		}
+
+		//StaleElementException
+		PageFactoryPackage-page1.class
+		class Page1{
+			
+			@FindBy("id=id123")
+			public WebElement textbox;
+					
+			@FindBy("xpath=//button[@id]")
+			public WebElement button;
+
+			public void setText(String text)
+			{textBox.sendKeys txt;}
+
+			public void clickButton()
+			{button.click();}
+
+		}
+
+		TestBase--TestBase.class
+		class TestBase{
+		public static Page1 pg1;
+		
+		@BeforeSuite
+		public static void openBrowser(){
+		WebDriver driver=new ChromeDriver();
+		driver.get("url");
+		driver.manage().window().maximize();
+		driver.managet().timeouts().implictlyWait(Duration.ofSeconds(10));
+		initMethod();
+		}
+
+		public static void initMethod(){
+		pg1=PageFactory.initElements(driver,Page1.class);
+		}
+		
+
+		Testcases--test1
+		public class Test1 extends TestBase{
+		
+		@Test
+		public void submitForm(){
+		pg1.setText("Ajeet");
+		pg1.clickButton();		
+
+		}
+		
+		}
+
+		}
+		
+		}
+
+
+
+	//Assertion
+	Assert.assertEquals("Hello", "Hello1");
+
+	SoftAssert sa=new SoftAssert();
+	sa.assertEquals("Hello", "Hello1");
+	sa.assertAll();---- this is mandatory step for soft assert
+
+	or 
+	if(!("Hello").equalsIgnoreCase("hello2"))
+	{
+		sa.fail(""String is mismatched);
+		sa.assertAll();
+
+	}
+
+
+	//ScrollBar Demo
+	JavascriptExecutor js=(JavascriptExecutor)driver;
+	js.executeScript("window.scrollBy(0,2000)")---Move vertically--positive value scroll down
+	js.executeScript("window.scrollBy(0,-2000)")---Move vertically--negative value scroll up
+	js.excuteScript("window.scrollBy(2000,0)")---Move horizontally--postive value scroll right
+	js.executeScript("window.scrollBy(-2000,0)")--Move horizontally--negative value scroll left
+	js.executeScript("window.scrollBy(0,document.body.scrollHieght)")------Move vertically--positive value scroll down till the end
+	js.executeScript("window.scrollBy(0,-document.body.scrollHiegt)")----Move vertically--negative value scroll up till the end
+
+	//Scroll to Element
+	js.executeScript("arguments[0].scrollIntoView(true);", element);
+
+
+	//ReSize Window
+	1-
+	Dimension d=new Dimension(600, 400);-- width,hieght
+	driver.manage().window().setSize(d);
+	2-
+	JavascriptExecutor js=(JavascriptExecutor)driver;
+	js.executeScript("window.resizeTo(600,400)");
+	
+
+            // how to create xls and xlsx files 
+HSSFWorkbook wb =new HSSFWorkbook("C:\\Test.xls")
+XSSFWorkbook wb =new XSSFWorkbook("C:\\Test.xlsx")
+
+
+	//Get Broken Links of a page
+
+
+	public class BrokenLinks {
+	private static WebDriver driver = null;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String homePage = "http://www.zlti.com";
+		String url = "";
+		HttpURLConnection huc = null;
+		int respCode = 200;
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(homePage);
+		List<WebElement> links = driver.findElements(By.tagName("a"));
+		Iterator<WebElement> it = links.iterator();
+		while (it.hasNext()) {
+			url = it.next().getAttribute("href");
+			System.out.println(url);
+			if (url == null || url.isEmpty()) {
+				System.out.println("URL is either not configured for anchor tag or it is empty");
+				continue;
+			}
+			if (!url.startsWith(homePage)) {
+				System.out.println("URL belongs to another domain, skipping it.");
+				continue;
+			}
+			try {
+				huc = (HttpURLConnection) (new URL(url).openConnection());
+				huc.setRequestMethod("HEAD");
+				huc.connect();
+				respCode = huc.getResponseCode();
+				if (respCode >= 400) {
+					System.out.println(url + " is a broken link");
+				} else {
+					System.out.println(url + " is a valid link");
+				}
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		driver.quit();
+	}
+}
+
+
+
+}

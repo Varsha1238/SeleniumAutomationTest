@@ -1,0 +1,271 @@
+1- Tell me about when you have missed any deadlines?
+Yes,it happened sometimes with me as well. I was leading one project in TCS, and following agile methodology,but we got the build from developers very late and we had not enough time to test it, and sometimes we got high no of bugs, that also caused missing the deadline. I usually keep updating the higher management with the progeess and if there is any expected delay that is alos communicated before hand. 
+As a solution, we asked developers to take those many user Stories that they can develop withing timeline and handover it for testing. Also, application outage happens usually, so we had asked patching team to update us before hand so that we can plan accordingly. Resource crunch also happened due to some unplanned leaves, so we sorted out that thing as well. 
+So, these are some incidents where we missed the deadlines and made sure that this will not happen in the future.
+
+
+2-Tell me about a time when you have disagreed with your senior member ot staff? or have you ever faced any difficulties to work with your manager or team members?
+Yes, it also happened sometimes. I remember one scenario, where I suggested to change all absolute path with the relative xpath. In the beginning,no one was agreed, then I scheduled one meeting where I explained the benefit of using relative xpath and I showed the practical demo to them.. and then they agreed to change in all the scripts.
+and sometime this also happend, that I gave some solution and after having a discussion with all members, I had to take back my decision to implement that suggestion. So yes, there were some incidents where we faces such situation, and having a mutual discussion we agreed to a righ course of action.
+
+
+3- Give me an example that you tried in your job that has not worked and how did you learn from it?
+yes, it happened few times.. I remember one scenario where I was doing POCs for diffrent clients and I had a discussion with one of the clients and their application was developed in a such manner that we were not able to get locators for their application but I took that as a challenge I decided to do POC for his application. Usaully I had to deliver POC results withing 2 weeks.. With the help of screens of there application I successfully autoamted their application, but it was not feasible for them to follow the same approch as this was taking a lot of effort and expertise as well. 
+So, I learend that I need to consider the user friendliness of the script designing and right expertise at the same time.
+I created some groups also to resolve the problems of members but it also did not work to time constraint.. so yes, it happend sometimes.
+
+
+4-Tell me about a time you supported a member of your team who was stuggling?
+This happens usually with me.. actually whenever I join a new team and I get KT from someone then I notedown that what are all pain areas for a new joiner, so when someone comes with any issues or problem then I usully explains in a way that they should get better understanding and there should not be any issues. I gave automation KT to many associates and always ready to help them.
+and sometime, if they have any personal issues and I used to be friendly with them and they were sharing the problems and I tried to help them as much as possible.
+
+
+5-Give an example of a time you have had to improvise to achieve your goal?
+Yes, I did extra effort to learn new technologies, did overtime, worked on weekend to achieve the goals. Also, sometime, when I suggested some solution, so to practically implement that I had to manage my times in this way only.
+
+
+6-If you are offered this job, what you like to chnage at first stage.
+Ok great, it's a pleasure to work with you all. First I will try to learn existing tools and technologies. once I have enough understading of applications and process then will see if there are any possibility to enchance the tool/application in terms of technology or process. And if there is any scope then will present the suggestion with right stakeholders and team members, and if we think that it is a good step then will proceed to implement the changes.
+
+
+7-Describe a time when you faced an unexpected challenge at work.
+Yes, it happened quite few time when I was over burdened and got frustrated, so always my first point of contact is my manager and I explained him the sitution, so that he would be aware of my siutation and can provide any support if possible.
+Sometime, I got some personal issues as well, so handled in this way only.
+
+
+8-Do you prefer working in Team environment or independtly?
+I always prefer to work in team env, it's having better social aspects as well as if you are stuck somewhere then team can help you. Also, you can learn a lot of new things with the team members as everyone used to have different unique qualities.
+Also, I like to help others, team members problem I take as a challenge and it always exites me and after solving it, it gives an immense pleasure.
+and, if there is a requirement to work as an Individual contributor, then yes I will accept, in my previous project I was working as Individual contributor.
+
+
+9-Do you prefer to work late night or on weekend.
+Actually it depends on the situation, if project requires extra effort to complete some task, then surely I will help my team to achive goal. but if there is no need for extra work then I would not suggest to work late night or on weekend to my team members.
+
+
+10-How you will handle if there is a problem with a team member, who is not doing his fair share of work?
+yes, I saw this behavior with few members. Usually I prepare the data first and interact with that associate in one to one and will explain that what is expected and what is actual. Will try to understand the concern of associates and there is some help/solution then I helped that.
+In case, if associate is not changing his bevior then will explain it to manager and if further required then connect with HR.
+
+
+11-What will you check if you get any project/application for automation?
+
+
+
+
+12- As a QA tester, can you tell me when and why you felt the most proud of it.
+Yes, I felt it many times. I will tell one story, I joined a new team as an automation engineer, upon joining I found there is one non technical issue is going on for which they have struggling from last 6 months and it reached to higher management also. I took that problem as a challenge and did some r&D and found a solution. later I got appreciated by VP of DevOps and Technology. This was the one of the best moment for me.
+I was known as problem solver, because I try take problems with different approaches and with positive mind set that I will sure going to solve it, and at the end that feeling of accomplishment is the proud moment for me.
+Apart from this, I also used to be a part of social activities like blood donation, helping people during COVID peak time.. etc.. and received many appreciations for the same.
+
+
+13- How will you prioritise your work? what is important and what is not?
+I will check what is important and critical for the project, accordingly I will do. First I will complete all assigned task, later will check if there are any queries from other team members, will look into that. And still If I am getting some time, then I can explore new technoloagies to implement in the team.
+
+
+14- What process you will follow to check if new joinee understood everything after getting KT?
+ok, First I will some to new joinee to practice whatever I covered in KT and in case of any queries, will resolve that. Later I will give some beasic testcases to execute them, and once joinee is comfotable then will ask to cover some E2E scenarios. Once all done, then I will assign some easy task as a part of sprint and will check the progress.
+BTW I trust on my KT, and try to teach them like what I expected during my KT. I will cover all pain points that I was faced during my KT.
+
+
+15- Suppose you find a bug in production, how will make sure that same bug is not introduced again?
+I will add that scenarion in regression pack so that after every buid that scenario will be tested. and will see the cause how this got missed and will make sure that this will  not happen in future.
+
+
+16-What do you do when your developer denies that what you filed as a BUG?
+I will provide the supporting document/user story why the existing funtionality is not a per design.
+Involve BA/PO for discussion if there is any confusion
+
+If Bug is not reproducible then
+Provide screenshots of the bug, so tht as per the timestamp developer can check the application logs
+Provide all steps and test data to reproduce the issue.
+
+
+17-What has been one of your greatest challenge while doing regression testing?
+Test Data issue- ex- if your are testing your wallet, and it has 1000 rs and you paid for some products, now if you want to again buy other products then there should be some amount in your wallet.
+
+Application outage issue
+Scope of Regression-improper selection of regression test cases that might skip a major regression defect to be found.
+
+18-Difference between functional and non functional testing?
+Functional testing verifies that feature/systes as per the requirements or not ex- smoke, sanity, integration, system testing, regression testing.. etc
+Non-Functional requirements- how well the system does it withing the design and resource constraints.. like how many max user it can handle, what about performance/stress/load/security testing etc.
+
+
+19-Give me some key challenges that you faced while performing software testing.
+Data issues,- inflight data, or new data
+Environment availablility- SIT should be ready for that feature
+Using right set of tools-
+
+
+20- What are different level of testing?
+Unit Testing- Done by developer
+SIT- to check if two modules or system connected and working as expected
+System Testing- to check end to end funcationality
+UAT- just to show the prodcut to client and show what we have developed or some level of testing performed by buusiness users, testing on like live environments
+After deployment- BVT- Business validation test
+
+
+21-What are the drawbacks of agile methodology that you faced?
+- Strict timelines of sprint
+- Documentation is not on priority
+- Frequent changes in the requirement
+
+
+22-What is your approach when you have a high priority release to be delivered in a very short time?
+-Run Automation Suite
+-Run Unit Tests
+-Manual Testing on high level priority business test cases
+
+
+23-Example of high priority and low severity bug
+- Wrong logo image in Application
+
+24-What is your understanding of a Test Plan?
+- Test plan is a formal document that consists of testing scope, approach, tools, resources and timelines-outline of the testing project as well as the activities for tracking the progress of project. Risk associated etc.
+
+
+25- Explain what will be your reacting when a project you had been working got sudden change in its deadline?
+- As a QA engineer, be clear with your thoughts if you can deliver the project with QA sign off covering all testcases.
+-If Pre release is must, then discuss the opportunity of increasing QA resources or possibility of partial product delivery.
+- You have the power to hold QA Sign off if you are not satishfied with the quality of product which evetually stops the release date.
+
+
+26-Difference between Smoke Testing and Sanity Testing?
+-Smoke Testing- Build verfication testing, as a part of Acceptance testing, to check the deliver build is working fine and we can proceed with remaining testing.or check critical functionality working fine, can schedule automation script on daily basis. 
+
+-Sanity Testing- Bug/change verification testing, part of Regression testing, to check the functionality related to bug fixes or changes.
+
+
+27-If small section of code is updated in your application, what will be you Test approach to validate it?
+We will not go for complete application testing
+-First will check with the developers to check what module they have changed.
+-will test that module completety and will check if that moduly is directly impacting or connected with any other module.
+
+
+28-Differentiate Ad-hoc Testing and Exploratory Testing?
+- Adhoc testing includes learning of application first and then proceeding with the testing process. Test application randomly, without any testcases/documentation.
+-Exploratory testing means learning the application while testing. You dont know the application, same here also there is no documentation or testcases.Test blindly.
+
+
+29-What is your daily activities as a member of automation tester in your office?
+- Going through emails to check if someone is looking for any details, meetings scheduled for that day and any pre-preparation required or not
+- Running smoke suite on daily basis or schduled autoamtion report and sending the mail to the team on the health of application
+-If any testcases are failed in smoke testing, get the root cause and raise bug and assign and email to concerned team.
+-Checking if any defects are fixed and need to retest that.
+-then working on automation testing stories assigned in that sprint.
+
+
+30-How do you select regression test cases from the regression test suite?
+- include the testcases that verify the core feature of the application.
+-Include the testcases for functionality that have gone for recent changes.
+-Included the testcases those are prone to bugs, frequenty getting bugs in production.
+
+
+31-Have you ever managed writing the test cases without having any documents?
+-Yes, sometime this happened.. if working on existing application
+-First we do exploratory testing, so that we can have an understading of application scenarios.
+-Connect with the PO and Seniors to understand the business requirement of that application.
+-Going through the production bugs which found previously for that application.
+
+
+32- What is the first action you perform as a tester when application throws any wierd errors?
+First debug at your level, if any application down, or inpur parameter or incorrect, network issues etc.more inforamtion about that defect.
+- Open developer tools- check in console for any Java script errors
+- Open Network Tab- and see if request response is failed.Status code 200..if 404 
+- Verify application logs, if there are any error generated.
+
+
+33-How do you decide if testcase is not ideal candidate for automation?
+-Tests which are highly dependent on Data with Frequent changes every time. Before every automation run, will have to set the data manually..
+- Test can not be automated due to technical challenges like OTP and captcha.
+- Tests which are unstable due to complex nature of application.
+
+
+34-Difference between Retesting and Regression Testing.
+- Restesting is done to make sure the tests which failed in last execution and developers fixed the bugs. done for every defect fixes.
+- Regression testing to ensure the changes have not impacted other existing modules.
+-Regression testing is not carried out for specific defect fixes.
+
+
+35-What is the most intersting bugs you have found recently?
+I was managing GDR application where we store client documents and for one restricted country somehow restrction was not appiled on backend and at frontend it was showing that it was impleted as it used to done at 2 places. being a Japan user, I accidently clicked for China specific document and it was openeing for me, then we came to know that there were a functionality of making confidential doc to non confidentianl but it was impacting the others newly added documnets.
+
+
+36-whome do you approach if any domain related queries/ or doubts for your product?
+- will connect BA and Product Owner for Product/Domain related queries.
+
+
+37- As a tester, how will you diffeentiate between dummy login page which exactly designed same as your working project login page?
+-application logs, every activity will be recorded in the applciation logs and see if it there. if no logs, then it's not original.
+
+
+38- How will you tell if enough test cases have been created to test a product?
+-Each business requirement is mapped with at least one test scenario.
+-Each Test scenario should have positive and negative test cases.
+Using Traceability matrix, to check if these testcases are covering all the requirement specification.
+
+
+
+
+
+
+
+
+
+
+
+1.what is your expectation from the Manager and Team?
+From Manager
+-Transparency
+-Good Team Culture
+-Awards and Recoginition
+-Accountability
+-Communication
+-Feedback
+
+From Team-
+-Accountability
+-Team Work
+-Positive work attitude
+-Help and support
+-Communication
+-Eagar to learn new things
+-Felixible about job and task assignments
+-Follow process and policies etc.
+
+
+2. if there is a conflict between two Team members, and you are the team lead, how will you handle this situation?
+1. Did u identify any requirement defects and tell to BA or PO
+2. If testing on Mobile app, what all to consider
+3. How did u handle if there is a defect slippage in testing and was identified in prod
+
+about JIRA..
+lead roles
+In agile, who does what
+Kanban board or scrum borad
+dashboard in scrum
+
+
+Authorization and authentication
+Verification and validation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

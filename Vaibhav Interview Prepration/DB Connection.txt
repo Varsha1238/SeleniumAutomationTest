@@ -1,0 +1,29 @@
+//load DB driver
+Class.forName("oracle.jdbc.");
+
+//Create Connection object
+Connection con=DriverManager.getConnection(dburl,uid,pwd);
+
+//create statement'
+Statement st=con.createStatement();
+
+//execute Query
+ResultSet rs=st.executeQuery(dbQuery);
+
+while(rs.hasNext())
+{
+
+sysout(rs.getInt(1)+" "+rs.getString(2));
+
+}
+
+
+
+for Update/Insrt
+sql="insert into Employee empID,empName, salary values(?,?,?)"
+PreparedStatement pr=con.preparedStatement(sql);
+pr.setString(1,"101");
+pr.setString(2,"Ajeet");
+pr.setString(3,"3200000");
+
+int rowInserted=pr.executeUpdate();

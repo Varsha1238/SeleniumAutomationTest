@@ -1,0 +1,76 @@
+Git hub - https://github.com/Varsha1238/ -- pass -Varsha@2029
+https://github.com/Varsha1238/SeleniumWithJavaAutomationTestPractice.git
+
+
+
+git init 
+git config --global user.name
+
+git config --global user.email
+git remote add origin "GitHUB Repo Path"
+touch test.java--- Create file
+cat test.java----- view file
+
+
+
+
+
+
+git stash -- ,to remove your existing changes
+git pull -- to get new changes done by other members
+git stash pop-- to get your changes
+git add . --- to add the all changes
+git commit -m "message" --- to commit the all changes
+git push --- to push all changes in GitHub
+
+
+if 2 or more members are working on same lines of code then during git stash pop, it wll ask which code you want to keep, whether incoming or existing or both and later you can resolve the conflicts.
+
+If you find a lot of conflicts and you are not sure on your changes then you can take clone of masterbranch and take checkout of your branch like dev etc..
+
+
+
+Merge
+Rebase
+Merge lets you merge different Git branches.
+
+Rebase allows you to integrate the changes from one branch into another.
+
+Merge logs show you the complete history of commit merging.
+
+Rebase logs are linear. As the commits are rebased, the history is altered to reflect this.
+
+All the commits on a feature branch are combined into a single commit on the master branch.
+
+All commits are rebased, and the same number of commits are added to the master branch.
+
+Merge is best used when the target branch is supposed to be shared.
+
+Rebase is best used when the target branch is private.
+
+Merge preserves history.
+
+Rebase rewrites history.
+
+
+
+
+git pull = git fetch + git merge
+
+
+ Can you explain head in terms of git and also tell the number of heads that can be present in a repository?
+A head is nothing but a reference to the last commit object of a branch.
+For every repository, there will always be a default head referred to as “master” or now “main” (as per GitHub) but there is no restriction to the count of heads available. In other words, it can have any number of heads.
+Usages:
+
+- To go or checkout to 1 commit before the latest commit, we use git checkout HEAD~1
+
+- To uncommit the last 3 commits without losing the changes, we first run git reset HEAD~3. Then we can see the changes made in the last 3 commits and then update it manually and commit it finally.
+
+- In order to uncommit the last 3 commits and also remove the changes, we can run the command: git reset --hard HEAD~3. This command will completely remove all the changes.
+
+- To look into the changes made in the last 3 commits, we can run git diff HEAD~3
+
+- To make a new commit by reverting the last 3 commits, we can run the command: git revert --no-commit HEAD~3...HEAD
+
+

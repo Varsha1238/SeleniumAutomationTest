@@ -1,0 +1,356 @@
+OOPs (Object-Oriented Programming System)
+Object means a real-world entity such as a pen, chair, table, computer, watch, etc. Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects.It simplifies software development and maintenance by providing some concepts like object,class,inheritance,Polymorphism,Abstraction,Encapsulation
+
+1) Object 
+An object is a real-world entity which has state and behavior.For Example, Pen is an object. Its name is Reynolds; color is white, known as its state. It is used to write, so writing is its behavior.The object is an instance of a class.
+
+2) Class
+Collection of similar objects is called class. It is a logical entity.
+A class can also be defined as a blueprint from which you can create an individual object. Class doesn't consume any space.
+
+3) Inheritance 
+When one object acquires all the properties and behaviors of a parent object, it is known as inheritance.
+Subclass can access all properties and methods of parent class with the help of inheritance feature.
+Multiple Inheritance is not supported by Java and this is acheived by using interfaces.
+-->Why use inheritance in java
+For Method Overriding (so runtime polymorphism can be achieved).
+For Code Reusability.
+
+Single inheritance 
+multilevel in
+Heirarchical 
+
+4) Polymorphism
+If single action is performed in different ways, it is known as polymorphism.
+Polymorphism is derived from 2 Greek words: poly and morphs. The word "poly" means many and "morphs" means forms. So polymorphism means many forms.
+For example: to convince the customer differently, to draw something, for example, shape, triangle, rectangle, etc.
+
+a)compile-time polymorphism --> Method overloading
+b)runtime polymorphism --> Method Overriding
+
+a)Method overloading
+If a class has multiple methods having same name but different in parameters, it is known as Method Overloading.
+Different parameters means count of parameters should be different or data types of parameters should be different.
+Method overloading increases the readability of the program.
+
+There are two ways to overload the method in java
+By changing number of arguments
+By changing the data type
+
+Que.Can we overload java main() method? / Can we have multiple main() methods in java class
+Yes, by method overloading. We can have any number of main methods in a class by method overloading. But JVM calls main() method which receives string array as arguments only
+
+b)Method Overriding
+If subclass (child class) has the same method (with same name and same signature) as declared in the parent class, it is known as method overriding in Java.
+
+Que.Upcasting and DownCasting
+A process of converting one data type to another is known as Typecasting and Upcasting and Downcasting is the type of object typecasting.
+Upcasting is a type of object typecasting in which a child object is typecasted to a parent class object. 
+Upcasting -- > If the reference variable  of Parent class refers to the object of Child class, it is known as upcasting.
+Parent p = new Child()
+DownCasting  --> The reference of the parent class object is passed to the child class.
+Parent p = new Child()
+Child c = (Child)p;
+
+5) Abstraction 
+Abstraction is a process of hiding the implementation details and showing only functionality to the user. it is achieved by Interfaces and Abstract classes
+For example phone call or TV remote where we don't know the internal processing.
+For example, sending SMS where you type the text and send the message. You don't know the internal processing about the message delivery.
+
+6) Encapsulation
+Encapsulation in Java is a process of wrapping code and data together into a single unit, for example, a capsule which is mixed of several medicines.
+We can create a fully encapsulated class in Java by making all the data members of the class private. Now we can use setter and getter methods to set and get the data in it.
+
+Que. Difference between String literal and String object
+
+A String is one of the pre-built class in java.lang package
+
+String a = "hello";
+String b = "hello";  //String literal
+
+In this example both string literals refer the same object if string content is same and new object will not be created 
+b reference variable will point to this original object.
+
+String x = new String("hello);
+String y = new String("hello); //String class Object
+Here, 2 different objects are created and they have different references:
+
+Que.Why Java Strings are immutable in java
+-->  immutable means they can not be altered or changed ,they are like constants 
+Java Strings are immutable because in case of String literals if content of String is same then it will refer to the same object instead of creating new object.
+So if original content is changed it will make problem for other string literal reference which is still refering to the original object.
+
+Que.How to make strings mutable 
+StringBuffer and StringBuilder classes are available with help of that we can make strings mutable
+
+Que.Difference between StringBuffer and StringBuilder
+StringBuffer is a thread safe ,synchronized ,slower--> Safe to use 
+StringBuilder is not a thread safe ,it is non-synchronized ,faster than StringBuffer
+
+StringBuffer is synchronized. This means that multiple threads cannot call the methods of StringBuffer simultaneously.
+Due to synchronization, StringBuffer is called a thread safe class.
+Due to synchronization, StringBuffer is lot slower than StringBuilder.
+
+Thread Safe means when multiple programs/multiple methods are trying to access StringBuffer class at a time then StringBuffer will not allow all those to act at a time.bcoz that will lead to false results .it will make sure that is thread safe.it will give permision to another program or another thread to make modification only if existing thread work is finished.
+
+In automation project,if multiple tcs are running in parellel and if all those multiple tcs are accessing same variable at the time then sbuffer will take care of serving one tc and then giving control to another testcase .in this way it manages the thread control and turned as thread safe and synchronized.
+
+Que.Diff between equals and ==
+We can use == operators for reference comparison (address comparison) and .equals() method for content comparison.
+str.equals(str1)  -->content comparison--> In Java, the String equals() method compares the two given strings based on the data/content of the string
+
+Que.Interfaces in java
+An interface in Java is a blueprint of a class. Interface will have methods but not method body.All methods of interface are abstract methods.
+Interface is used to achieve abstraction and multiple inheritance in Java
+
+Example Bank interface ,getRateOfInterest()
+
+Que. Diff between interface and Abstract class
+Interface-
+Interface contains only abstract methods means not having method body--> 100% abstraction is acheived 
+Access modifiers for methods in interface must be public.Variables must be public,static,final
+To implement an interface we use implements keyword
+
+Abstract class -
+Abstract class contains abstract and non-abstract/concrete methods both (method with the body).--> Partial abstraction 
+Except private we can have any access modifier for methods or variables in abstract class
+To implement an Abstract class we use extends keyword
+
+Abstract Methods - A method which is declared as abstract and does not have implementation is known as an abstract method.
+Abstract class -A class which is declared with the abstract keyword is known as an abstract class in Java. It can have abstract and non-abstract methods (method with the body).We can not instantiate of Abstract class
+
+Que.What is Constructor
+Main moto is to use constructor is to initialize the class variables
+Constructor is just like method of class with same name as class name and no return type.
+Constructor is invoked whenever an object of the class is created
+There are some rules defined for the constructor.
+1. Constructor name must be the same as its class name
+2. A Constructor must not have any explicit return type
+3. A Java constructor cannot be abstract, static, final, and synchronized
+
+There are two types of constructors in Java:
+1. Default constructor (no-arg constructor) --> It will be called by default if we do not define any constructor for class
+2. Parameterized constructor
+ConstructorDemo cd = new ConstructorDemo(); //default constructor
+ConstructorDemo cd1 = new ConstructorDemo(10,20); //Parameterized constructor
+ConstructorDemo cd2 = new ConstructorDemo("hello"); //Parameterized constructor
+	ConstructorDemo()
+	{
+		System.out.println("Default Constructor");
+	}
+	ConstructorDemo(int a,int b)
+	{
+		System.out.println("Parameter Constructor "+(a+b));
+		//System.out.println(a+b);
+	}
+	ConstructorDemo(String str)
+	{
+		System.out.println(str);
+	}
+
+Que.super keyword 
+super is a reference variable that refers to the immediate parent class object.
+-->Usage of Java super Keyword
+super keyword can be used to access the data member or field of immediate parent class.It is used if parent class and child class have same fields.
+super can be used to invoke immediate parent class method.
+super() can be used to invoke immediate parent class constructor.
+
+Que.this Keyword
+
+In class there can be situation where local variables and instance variables(global variables) are same then to remove the ambiguity between them use this keyword
+this is a reference variable that refers to the current class object.
+1.this can be used to refer current class instance variable  
+2.this can be used to invoke current class method (implicitly)
+3.this() can be used to invoke current class constructor.
+4.this can be passed as an argument in the method call.
+5.this can be passed as argument in the constructor call.
+6.this can be used to return the current class instance from the method.
+
+Que.how to perform sum of global and local variables 
+package javaConceptsPrograms;
+public class AddGlobalAndLocal 
+{
+
+	int a =10; //global variable or instance variable 
+	
+	void sum() 
+	{
+		int a=30; //local variable 
+	    System.out.println("Addition of numbers " + (a + this.a));
+	}
+			
+	public static void main(String[] args) 
+	{
+		AddGlobalAndLocal ad =new AddGlobalAndLocal();
+		ad.sum();
+
+	}
+}
+
+
+Que.Static variables
+The static keyword in Java is used for memory management mainly because it will get the memory only once in the class area at the time of class loading.
+The static variable can be used to refer to the common property of all objects (which is not unique for each object), for example, the company name of employees, college name of students, etc.
+All objects share variable by making that variable static .If any object changes the value of the static variable, it will retain its value.
+It makes your program memory efficient (i.e., it saves memory).
+
+The static can be:
+-->Variable (also known as a class variable) --> Static variables are purely belongs to class rather than the object of a class. so those are called class variables
+-->Method (also known as a class method)
+-->Block
+-->Nested class
+
+Que.Why the Java main method static?
+Ans) It is because the object is not required to call a static method. If it were a non-static method, JVM creates an object first then call main() method that will lead the problem of extra memory allocation.
+
+Que.Can we execute a program without main() method?
+Ans) No, one of the ways was the static block, but it was possible till JDK 1.6. Since JDK 1.7, it is not possible to execute a Java class without the main method.
+Error: Main method not found in class javaConceptsPrograms.ThisKeyWordDemo, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+
+
+Que.Exceptions
+The Exception Handling is used to handle the runtime errors so that the normal flow of the application can be maintained.
+try{ // code that may throw an exception  }
+catch(Exception e){}
+finally{//cleanup code/necessary statements }
+
+finally -- >
+Java finally block is always executed whether an exception is handled or not. Therefore, it contains all the necessary statements that need to be printed regardless of the exception occurs or not.
+
+Que.Why use Java finally block?
+finally{} block in Java can be used to put "cleanup" code such as closing a file, closing connection, closing browser ,clearing cookies etc.
+The important statements to be printed can be placed in the finally block.
+
+Que.Is there any way not to execute finally block 
+with the help of System.exit(0);
+
+Que.Final Keyword -->The final keyword in java is used to restrict the user 
+Final can be:
+1. variable -- >If we make any variable as final, you can not change the value of final variable(It will be constant).
+2. method -- > If we make any method as Final method ,you can not overrite that method 
+3. class -- >If we mark class name as Final ,we can not extends that class or can not use as base cass
+
+Que.Access modifier
+We can change the access level of fields, constructors, methods, and class by applying the access modifier on it.
+Class Level --> public and Default (if we do not provide any then its default)
+
+There are four types of Java access modifiers:
+Private: The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
+Default: The access level of a default modifier is only within the package. It cannot be accessed from outside the package. If you do not specify any access level, it will be the default.
+Protected: The access level of a protected modifier is within the package and outside the package through child class. If you do not make the child class, it cannot be accessed from outside the package.
+Public: The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package.
+
+Que.Difference between Set and List
+Que.Difference between HashMap and HashTable
+
+HashMap is not synchronized and not thread safe 
+HashTable is synchronized and thread safe 
+
+Hashmap contains null key where as HashTable will not have null keys
+
+Que : why static and default methods in interface from Java8? 
+Before Java 8, interfaces could have only abstract methods. The implementation of these methods has to be provided in a separate class. So, if a new method is to be added in an interface, then its implementation code has to be provided in the class implementing the same interface. To overcome this issue, Java 8 has introduced the concept of default methods which allow the interfaces to have methods with implementation without affecting the classes that implement the interface.
+
+
+Abstact class and inteface:
+1.  Abstract class can have abstract and nonabstracct methods. (Abstract class can have static ,final methods,static blocks),Abstract method can not be final
+vs
+Interface can have only abstract method.  (method can have public,static,default,abstract) ...no final
+
+2.  AC does not support multiple inheritance
+vs
+Interface support multiple inheritance.
+
+3.  Abstract class can provide the implementation of interface
+vs
+Interface cant provide implementation of abstract class.
+
+4.  Abstract is a keworkd used to declare abstract class.
+vs
+Interface is a keyword to declare interfacce.
+
+5.  extends is a keyword to implement abstract class.
+vs
+implements is a keyworkd to implement interface.
+
+6.  example:
+syntax:
+
+7.  Abstract class can have class member like pubic, proetected etc
+vs
+Interface will accept public by default.
+
+8.  Abstract class can have final, non-final, static and nonstaic variables.
+vs
+interface will have only public,static and final variables.
+
+
+
+Can we override static method?
+NO, we can't override static methods since method overriding relies on dynamic binding at runtime, but static methods are bonded at compile time with static binding. As a result, we are unable to override static methods.
+
+
+Java Main method interview questions:
+Why the main() method is public static?-The main() method is static in Java, so the JVM can directly invoke it without instantiating the class’s object.
+
+Can we overload the main() method in Java?- Yes, We can overload the main() method. A Java class can have any number of main() methods. But to run the java class, the class should have a main() method with signature as public static void main(String[] args).
+
+Can we declare the main() method as private or protected or with no access modifier?- No, as it needs to be accessed by JVM
+
+Can we declare the main() method as a non-static?- No, the main() method must be declared as static so that JVM can call the main() method without instantiating its class
+ 
+Can we change the return type of the main() method?- No, the return type of the main() method must be void only.
+
+Can the main() method take an argument other than String array?- No
+
+Can we run define Java Class without the main() method?- No
+
+Can we make the main final in Java?- Yes, we can make main method as final
+
+
+Static Block:
+In a Java class, a static block is a set of instructions that is run only once when a class is loaded into memory. A static block is also called a static initialization block. This is because it is an option for initializing or setting up the class at run-time.
+// Java Program to Illustrate Execution of Static Block
+// Before Constructors
+ 
+// Class 1
+// Helper class
+class Test {
+    // Case 1: Static variable
+    static int i;
+    // Case 2: Non-static variable
+    int j;
+    // Case 3: Static blocks
+    static
+    {
+        i = 10;
+        System.out.println("static block called ");
+    }
+ 
+    // Constructor calling
+    Test() { System.out.println("Constructor called"); }
+} 
+// Class 2
+// Main class
+class GFG { 
+    // Main driver method
+    public static void main(String args[])
+    {
+        // Although we have two objects, static block is
+        // executed only once.
+        Test t1 = new Test();
+        Test t2 = new Test();
+    }
+}
+
+Output: 
+static block called 
+Constructor called
+Constructor called
+
+
+
+
+

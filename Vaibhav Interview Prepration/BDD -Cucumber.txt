@@ -1,0 +1,18 @@
+https://github.com/Varsha1238/SeleniumCucumber
+
+
+In Behaviour-Driven Development (BDD) we have basically 3 main files :
+
+1. Feature files
+2. Steps Definitions files
+3. Test Runner class 
+
+Feature Files: These are written in the Gherkin language and contain scenarios that describe the behavior of the system from the user's perspective.
+
+Steps Definitions: These are the actual code implementations of the steps outlined in the feature files. They define the actions that need to be taken to fulfill the scenarios.
+
+Test Runner class - From Test Runner class we can run feature file ,add tags, reporting plugin etc
+
+
+
+

@@ -1,0 +1,416 @@
+Most Common Selenium Exceptions
+ NoSuchWindowException
+ NoSuchFrameException
+ NoSuchElementException
+ NoAlertPresentException
+ InvalidSelectorException
+ TimeoutException
+ ElementNotVisibleException
+ ElementNotSelectableException
+ NoSuchSessionException
+ StaleElementReferenceException
+
+
+Exception- intrupption in the normal flow
+Exception Handling- Catch the exception at run time so that further steps could be executed.
+
+			Throwable- Top Most Class(Root Class)
+Exception							Error
+	IOException							StackOverFlowError
+	SQLException							VirtualMachineError
+	ClassNotFoundException						OutOfMemoryError
+	RunTimeException
+		ArithmaticException
+		NullPointerException
+		NumberFormatException
+		IndexOutOfBoundException
+			ArrayIndexOutOfBoundException
+			StringIndexOutOfBoundException
+
+
+
+Two Types of Exception
+1- Checked
+2- Unchecked Exception
+3- Error(As per oracle)
+
+Checked Exception- 
+Classes that directly inherit Throwable class except RunTimeException and Error are known as Checked exception.
+Checked exceptions are checked at compile time
+ex- SQLException, IO Exception, ClassNotFoundException
+
+UnChecked Exception:
+Classes that inherit RunTimeException are known as unchecked exceptions
+these are not checked at compile time, they are checked at run time.
+Ex- NullPointerException, NumberFormatEception,ArithMaticException, IndexOutOfBoundException etc..
+
+
+
+Error-
+Error are irrecoverable, ex- VirtualMachineError, AssertionError etc.
+
+
+Java Exception Keywords:
+try-
+it's a block where we should place an exception code
+try block can not be used alone, it must be followed by either catch ot finally
+
+catch-
+The catch block is used to handle the exception.
+it must be preceded by try block, it cant be used alone.
+
+finally-
+it is used to executed the necessary code of the program, like freeing up the memory etc.
+finally block is executed whether exception is handled or not.
+
+throw-
+throw keyword is used to throw an exception.
+
+throws-
+it is used to declare exceptions.
+it specifies that there may occur an exception in the method. It doesn't throw an exception, it always used with method signature.
+
+
+** If exceptions occur in try block, then the next lines of codes written in try block will not be executed.
+
+try{
+int a =100/0;
+System.out.println("code after exception")
+catch(Exception e)
+{
+System.out.println(e);
+}
+}
+
+in this code, it simply throw the exception and will not print "code after exception".
+and instead of printing e, we can print our custom message as will inside the catch block.
+
+
+
+e.printStackTrace();--- will print the of exception occurence stack trace
+e.getMessage();---- Get the exception message
+
+* we can have multiple catch block with a try block
+-at a time one exception can be handled
+-we need to maintain the order of exceptions, means most specific to general... Artithmatic exception come before the Exception
+-in case we are not maintaining exceptions order in catch block then it will give compile time error.
+
+
+
+try{
+int a = 100/0;
+}catch(ArithmaticException e)
+{
+System.out.println(e);
+}catch(ArrayIndexOutOfBoundException e)
+{
+System.out.println(e);
+}catch(Exception e)
+{
+System.out.println(e);
+}
+
+
+
+
+
+
+public class Exceptions {
+
+	@Test
+	/*public void testExceptionDividebyZero()
+	{
+		try{
+			int a=0/0;
+		}
+		catch (Exception e) {
+			System.out.println(e);
+			//throw new ArrayIndexOutOfBoundsException("This is modified exception");
+		}
+	}*/
+	
+/*	public void numberFormatException(){
+		try {
+			String a="Ajeet";
+			int a= Integer.parseInt(a);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+	}*/
+	
+	
+	/*public void outOfBoundException()
+	{
+		try {
+			int a[]=new int[5];
+			a[10]=15;
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+	}*/
+	
+	/*public void nullPointerException()
+	{
+		String s=null;
+		try{
+			System.out.println(s.length());
+		}catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		
+		System.out.println("Line after exception");
+	}*/
+		
+}
+
+
+** Nested Try block could be there... and corresponding catch/finally block will be there.
+
+
+FINALLY block:
+finally block is used to execute the important codes or cleanup activities such as closing the connection, closing file etc.
+this block is always executed whether the exception is handled or not.
+
+try{
+}catch(Exception e){
+}
+finally{
+}
+
+
+try{
+}finally{
+}
+
+
+THROW keyword:
+throw keyword is used to throw an exception explicitly, we define the exception object which is to be thrown.
+Syntax- throw new exceptionClass("Error Message");
+throw new IOException("Device Error")
+
+
+try{
+			throw new ArrayIndexOutOfBoundsException("This is modified exception");
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+
+we can also throw userdefined exception.. for that we will have to create a class, that will extend Exception, and inside the parameterized constructor we simply call the super method with message paramater.
+
+
+
+
+ex- 
+class UserDefindedException extends Exception{
+
+public UserDefindedException(String str){
+super(str);
+}
+}
+
+
+class TestException{
+
+public static void main(String args[])
+{
+try{
+		throw new UserDefindedException("This is userDefinded exception");
+		}catch(UserDefindedException ue){
+			System.out.println(ue);
+			System.out.println(ue.getMessage());
+		}
+
+}
+
+
+
+
+Exception Propagation:
+An exception is thrown from the top of the stack if not caught then drop down the prevous method in the stack and this flow will continue untill it reaches very bottom of the call stack. This is called the exception propagation.
+
+ex-
+By Default, unchecked exceptions are propagated in the calling chain.
+By Default, checked exceptions are not propageted in the calling chain- will give compile error.
+
+class TestExceptionPropagationw1{
+void m()
+{
+int data=50/0;
+}
+void n()
+{
+m();
+}
+void p()
+{
+try{
+n();
+}catch(Exception e)
+{
+System.out.println("Exception handled");
+}
+}
+
+public static void main(String[] args)
+
+{
+TestExceptionPropagationw1 obj=new TestExceptionPropagationw1();
+obj.p();
+System.out.println("normal flow");
+}
+
+}
+
+Output: Exception handled
+normal flow
+
+
+===========Checked Exception
+
+class TestExceptionPropagationw1{
+void m()
+{
+throw new IOException("This is checked exception");
+}
+void n()
+{
+m();
+}
+void p()
+{
+try{
+n();
+}catch(Exception e)
+{
+System.out.println("Exception handled");
+}
+}
+
+public static void main(String[] args)
+
+{
+TestExceptionPropagationw1 obj=new TestExceptionPropagationw1();
+obj.p();
+System.out.println("normal flow");
+}
+
+}
+
+
+Output:
+
+Compile Time Error 
+Solution----if we add Throws keyword then checked exception can also be propageted(Forwarded in the call stack)
+
+
+THROWS keyword:
+this keyword is used to declare an exception. It gives an information to programmer that there may occur an exception.
+
+syntax:
+returnType methodName() throws ExceptionClassName
+{
+}
+
+public void getName() throws IOException
+{
+}
+
+Q-Which exception we should declare?
+A- Only checked exception because:
+1- Unchecked exceptions- are under our control so we can correct our code.
+2- Error-beyond our control, ex- we are unable to do anything if there is VirtualMachineError or StackOverFlowError etc.
+
+
+Advantages of THROWS keyword:
+1- now checked exceptions can be propagated
+2- It gives the information to the method caller about the exception.
+
+Note: If we are calling a method that declares an exception then we must either caught(try/catch) or declare the exception(at method level with throws keyword).
+
+
+throw vs throws keyword:
+
+1- throw keyword is used to thrown an exception explicitly in the Java code while throws keyword is used to tell the programmer about the exception that may occur in the program.
+2-with throw keyword we can propagate only unchecked exception(NullPointerException, Arithmatic etc), while with the help of throws keyword we can propagate checked exceptions(IOException, FileNotFound,SQLException) etc.
+3-Syntax- throw new ExceptionClassName("message")/public void methodName() throws ExceptionClassName
+4- Declaration- throw is declared within the method where throws is deleclared at method signature
+5- We are allowed to throw only one exception at a time,but we can declare multiple checked exceptions using throws keyword ex. public void getName() throws IOException, SQLException
+
+
+finalize method--this method in Java is used to release all the resources used by the object before it deleted/destroyed by the garbage collector.
+finalize is not a reserve keyword, it's a method. Once the cleanup activity is done by finalize method, garbage collector immediately destroys the Java object.
+
+public class FinalizeMethod {
+public static void main(String[] args)
+{
+	FinalizeMethod fm=new FinalizeMethod();
+	//printing the hashcode
+	System.out.println("Hashcode is :"+fm.hashCode());
+	fm=null;
+	//calling the garbage collector using gc()
+	System.gc();
+	System.out.println("End of garbage collector");
+}
+
+//defining the finalize method
+
+public void finalize()
+{
+	System.out.println("This is finalize method");
+}
+}
+
+
+
+garbage Collecor
+
+final vs finally vs finalize
+
+final						finally						finalize
+
+final is a keyword and access			finally is the block in the java		finalize is the method which is used to perform				
+modifier which is used to apply			exception handling to execute the 		clean up processing just before the object is
+restriction at class,method or			important codes whether exception is		garbage collected. the finalize method will be called after the GC 
+variable.					handled or not.					detects that the object is no longer reachable or no more reference to 
+												object.if object is refrenced thn finalize method will never be called.
+
+
+final keyword is used with class		finally block is a part of try/catch		finalize() method is used with objects.
+method and variable				block during exception handling
+
+
+final variable will act as constant		finally blocks run the important codes		finalize method performs the cleaning activity wrt the
+which value could not be modified		even if exceptions occurs or not		objects before it's destruction.
+final method can not be overridden		it cleans all the resources used in try
+final class can not be inherited		block
+
+final method is excuted when we			this is executed as soon as try/catch is	finalize() method is executed just before the object is destroyed.
+call it.					executed.
+
+
+
+Garabge Collection:
+in Java, garbage means unreferenced objects. it is process to destroy the unused objects and freed up the memory.
+in C, it is done using free(), in C++ by delete().. in Java it is done automatically, so java provides better memory maanagement.
+it is performed by Garbage Collector(a part of JVM)
+
+
+How can an object be unreferenced:
+1- by assigning null to it.
+Employee e=new Employee();
+e=null;
+
+2- by Assigning a reference to another:
+Employee e1=new Employee();
+Employee e2=new Employee();
+e1=e2;  // now the 1st object referred by e1 is availble for garbage collection
+
+3- By anonymous object:
+new Employee();
+
+
+
